@@ -1,0 +1,159 @@
+---
+title: "Settings"
+description: "Manage your profile, availability, and notifications, and configure your workspace."
+icon: "gear"
+---
+
+Settings is where you manage your own account and, if you're an admin, configure the whole
+workspace. You'll find your personal settings (profile, availability, notifications)
+alongside workspace controls (team, branding, integrations, data, scheduler appearance, and
+SSO).
+
+<Note>
+  Open Settings from the **Dock** — the app bar at the bottom of the screen — by selecting
+  the **Settings** app (the gear icon), alongside your other Default apps (Tables, Routing,
+  Scheduling, Workflows). Settings opens in its own panel, split into **User settings** and
+  **Workspace settings**. Most workspace settings are available to admins.
+</Note>
+
+## User settings
+
+### Profile
+
+Your personal details, shown on your booking pages and meeting invites.
+
+<AccordionGroup>
+  <Accordion title="Personal details">
+    Set your **first** and **last name**.
+  </Accordion>
+  <Accordion title="Display name">
+    The name people see on your booking pages and calendar invites, such as
+    `Brennon from Default`.
+  </Accordion>
+  <Accordion title="Job title, phone number, and email">
+    Add your **job title** and **phone number**, and review your **email**. Adding a phone
+    number also unlocks the **SMS** notification channel.
+  </Accordion>
+  <Accordion title="Profile picture">
+    Upload an avatar shown across the product and on your booking pages.
+  </Accordion>
+</AccordionGroup>
+
+{/* TODO screenshot: Profile page */}
+
+### Availability & OOO
+
+Control when you can be booked.
+
+**Personal preferences**
+
+| Setting | What it does | Example |
+| --- | --- | --- |
+| **Vacation mode** | Pauses new bookings while you have an active out-of-office block. | Turn it on before time off so no one books you that week. |
+| **Pre-meeting buffer** | Minutes blocked before each meeting. | `15 min` for a breather before every call. |
+| **Post-meeting buffer** | Minutes blocked after each meeting. | `15 min` to write notes. |
+| **Notice period** | Minimum lead time before a slot can be booked. | `4 hours`, so no one books you ten minutes out. |
+| **Primary calendar** | The connected calendar new meetings are written to. | Your Google work calendar. |
+
+**Working hours** — Create one or more named schedules of per-day time ranges that define
+when you're bookable. For example, a "Default" schedule of Monday–Friday, 9:00–17:00.
+
+**Out of office** — Add date-range blocks when you can't be booked, on the OOO calendar. For
+example, block December 24–31.
+
+### Notifications
+
+Choose which events notify you, and on which channels. The page is organized by **channel
+tab** — select a tab, then toggle the notification types you want delivered there.
+
+<Tabs>
+  <Tab title="In-app">In-product notifications.</Tab>
+  <Tab title="Slack">Pick the Slack channel that receives them. Requires the Slack integration.</Tab>
+  <Tab title="Mail">Email notifications. Requires an email on your profile.</Tab>
+  <Tab title="SMS">Text notifications. Requires a phone number on your profile.</Tab>
+</Tabs>
+
+You can be notified about meetings, workflow errors, form errors, and routing assignments.
+
+<Info>
+  Your workspace sets which channels are available and the team defaults. You can turn
+  notifications off, but you can't turn on a channel your workspace has disabled — the
+  workspace sets the ceiling, and you adjust within it.
+</Info>
+
+## Workspace settings
+
+<Info>Workspace settings are available to admins.</Info>
+
+### Users
+
+Manage your team.
+
+<Steps>
+  <Step title="Find a member">Search by name or email, or filter by role.</Step>
+  <Step title="Invite teammates">Invite new members by email.</Step>
+  <Step title="Make bulk changes">Select multiple members to act on them at once, such as changing roles together.</Step>
+  <Step title="Manage a member">Open a member to edit their profile, availability, integrations, and notifications. The member's **Integrations** tab is where their calendar (Google or Outlook) and conferencing (Zoom) connections live.</Step>
+</Steps>
+
+### Workspace notifications
+
+Set org-wide notification defaults and the master channel switches that determine what
+members can enable. For example, route all workflow-error notifications to a shared Slack
+channel.
+
+### Branding
+
+Set your workspace logo, favicon, brand colors, and fonts.
+
+<Tip>
+  Branding is your **workspace identity**. The appearance of your public booking pages is set
+  separately under **Scheduling**, below.
+</Tip>
+
+{/* TODO: link to /settings/branding once that page exists */}
+
+### Configurations
+
+- **Objects** — Define the fields on your **Company** and **Person** records, and set a
+  priority-ordered list of data sources for each field. For example, fill a company's
+  industry from your first provider and fall back to the next.
+- **Waterfalls** — Build enrichment chains that try providers in order and accept the first
+  result. For example, an email-finder chain of Apollo, then Hunter, then Clearbit.
+
+### Integrations
+
+Connect third-party providers and set workspace defaults.
+
+<Steps>
+  <Step title="Find a provider">Search, or filter the grid by category (CRM, Enrichment, Conferencing).</Step>
+  <Step title="Connect it">Authorize the provider, such as Salesforce or HubSpot.</Step>
+  <Step title="Set defaults">Choose your workspace's default calendar, conferencing, and enrichment providers.</Step>
+</Steps>
+
+### Scheduling
+
+Theme your public booking pages, with a live preview beside the editor.
+
+| Control | What it sets |
+| --- | --- |
+| **Presets** | Starting themes; can seed from your workspace branding. |
+| **Background & text** | Page background and text colors. |
+| **Buttons** | Button background and text colors. |
+| **Fonts** | The booking page's primary font. |
+| **Logo** | The logo shown on booking pages, which defaults to your workspace logo. |
+| **Default footer** | Show or hide the Default footer. |
+
+When you're happy with the preview, **Publish** to make the theme live.
+
+{/* TODO screenshot: Scheduling editor with live preview */}
+
+### Enterprise
+
+Set up enterprise sign-in: connect **SSO** and verify your **domains** through the secure
+admin portal.
+
+<Warning>
+  You can't remove a verified domain while an SSO connection is still active. Remove the SSO
+  connection first.
+</Warning>
